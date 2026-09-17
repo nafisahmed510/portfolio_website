@@ -118,7 +118,7 @@ export function HomePage() {
                     <motion.a
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      href="https://github.com/nofishy/instagram-automation-kortix-migration"
+                      href="https://github.com/nafisahmed510/digital-marketing-automation-agent"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-silver hover:text-white"
@@ -202,7 +202,7 @@ export function HomePage() {
                 {[
                   { icon: Mail, text: 'nafisahmed510@gmail.com', href: 'mailto:nafisahmed510@gmail.com' },
                   { icon: Linkedin, text: 'linkedin.com/in/nafisahmed510', href: 'https://linkedin.com/in/nafisahmed510' },
-                  { icon: Github, text: 'github.com/nofishy', href: 'https://github.com/nofishy' },
+                  { icon: Github, text: 'github.com/nafisahmed510', href: 'https://github.com/nafisahmed510' },
                 ].map((contact, index) => (
                   <motion.a
                     key={index}

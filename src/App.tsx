@@ -6,6 +6,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
   // State to manage loading screen visibility
@@ -37,6 +38,9 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
+              {/* Catch-all: Netlify serves index.html for every path, so without
+                  this an unknown URL rendered nav + footer around an empty void. */}
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
 
             {/* Footer component */}

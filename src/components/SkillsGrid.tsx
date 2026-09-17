@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 // Define technology stack with detailed metadata
 // Each technology includes:
@@ -98,6 +98,14 @@ export function SkillsGrid() {
           className="group relative flex flex-col items-center justify-center p-4 rounded-lg bg-gray-900 border border-gray-800 transition-all duration-300 hover:border-gray-700 hover:shadow-lg hover:shadow-gray-900/50"
           onMouseEnter={() => setActiveTooltip(tech.name)}
           onMouseLeave={() => setActiveTooltip(null)}
+          onFocus={() => setActiveTooltip(tech.name)}
+          onBlur={() => setActiveTooltip(null)}
+          onClick={() =>
+            setActiveTooltip((current) => (current === tech.name ? null : tech.name))
+          }
+          tabIndex={0}
+          role="button"
+          aria-label={`${tech.name}: ${tech.description}`}
         >
           {/* Technology logo container with consistent sizing */}
           <div className="h-12 flex items-center justify-center mb-2">
@@ -110,21 +118,23 @@ export function SkillsGrid() {
           <span className="text-sm text-gray-400 text-center">{tech.name}</span>
           
           {/* Animated tooltip with technology description */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ 
-              opacity: activeTooltip === tech.name ? 1 : 0,
-              y: activeTooltip === tech.name ? 0 : 10 
-            }}
-            transition={{ duration: 0.2 }}
-            className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 rounded-lg border border-gray-800 shadow-lg shadow-black/50 pointer-events-none z-50"
-          >
-            <div className="relative">
-              <p className="text-sm text-gray-300">{tech.description}</p>
-              {/* Tooltip arrow */}
-              <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-gray-900" />
-            </div>
-          </motion.div>
+          <AnimatePresence>
+            {activeTooltip === tech.name && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 max-w-[calc(100vw-2rem)] p-3 bg-gray-900 rounded-lg border border-gray-800 shadow-lg shadow-black/50 pointer-events-none z-50"
+              >
+                <div className="relative">
+                  <p className="text-sm text-gray-300">{tech.description}</p>
+                  {/* Tooltip arrow */}
+                  <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-gray-900" />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       ))}
     </div>

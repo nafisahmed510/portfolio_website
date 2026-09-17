@@ -42,3 +42,5 @@ yarn-error.log*
 
 # Local development overrides
 *.local
+# Local scratch
+_portfolio_src.tgz

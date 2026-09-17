@@ -9,6 +9,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    @apply overflow-x-hidden;
   }
 
   /* Global body styles */
@@ -18,12 +19,9 @@
     touch-action: manipulation; /* Optimize touch interactions */
   }
 
-  /* Load Bengali font for matrix effect */
-  @font-face {
-    font-family: 'Noto Sans Bengali';
-    font-display: swap; /* Optimize font loading */
-    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap');
-  }
+  /* Noto Sans Bengali is loaded via <link> in index.html. Do not redeclare it
+     with @font-face pointing at the stylesheet URL — that is CSS, not a font
+     binary, and the browser fails to decode it on every load. */
 }
 
 /* Custom utility classes */

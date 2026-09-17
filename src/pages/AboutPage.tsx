@@ -51,7 +51,7 @@ export function AboutPage() {
               </p>
               <div className="flex space-x-4 pt-4">
                 <a
-                  href="https://github.com/nofishy"
+                  href="https://github.com/nafisahmed510"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"

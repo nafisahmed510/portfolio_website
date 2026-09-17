@@ -28,7 +28,7 @@ A modern, responsive developer portfolio built with React, TypeScript, and Frame
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/nofishy/portfolio.git
+git clone https://github.com/nafisahmed510/portfolio.git
 ```
 
 2. Install dependencies:
@@ -104,12 +104,12 @@ MIT License - feel free to use this project as a template for your own portfolio
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/nofishy/portfolio/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/nafisahmed510/portfolio/issues).
 
 ## 👤 Author
 
 **Nafis Ahmed**
-- GitHub: [@nofishy](https://github.com/nofishy)
+- GitHub: [@nafisahmed510](https://github.com/nafisahmed510)
 - LinkedIn: [nafisahmed510](https://linkedin.com/in/nafisahmed510)
 
 ## ⭐ Show your support
