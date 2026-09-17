@@ -1,0 +1,112 @@
+Project Configuration Files Documentation
+=====================================
+
+This document explains the purpose and structure of all JSON configuration files in the project.
+
+1. package.json
+--------------
+Primary configuration file for the Node.js project that defines:
+- Project metadata (name, version, privacy settings)
+- Script commands for development, building, and linting
+- Dependencies:
+  * Runtime dependencies (e.g., React, Framer Motion, Three.js)
+  * Development dependencies (e.g., TypeScript, ESLint, Vite)
+- Type: module (enables ES modules)
+
+2. tsconfig.json
+---------------
+Root TypeScript configuration file that:
+- References other TypeScript configurations
+- Splits configuration between application and Node.js specific settings
+- Uses project references for better organization
+- Empty files array indicates no direct compilation at this level
+
+3. tsconfig.app.json
+-------------------
+Application-specific TypeScript configuration:
+- Targets ES2020 for modern browser compatibility
+- Configures module system for bundler compatibility
+- Enables strict type checking
+- Sets up React JSX compilation
+- Includes source files from 'src' directory
+- Configures development-specific settings
+
+4. tsconfig.node.json
+--------------------
+Node.js-specific TypeScript configuration:
+- Targets ES2022 for modern Node.js compatibility
+- Configures module settings for Node.js environment
+- Enables strict type checking
+- Specifically includes Vite configuration file
+- Sets up bundler-specific options
+
+5. .gitignore
+------------
+Specifies which files and directories Git should ignore:
+- Build outputs (/dist)
+- Development files:
+  * Node modules (/node_modules)
+  * Environment files (.env, .env.*)
+  * IDE settings (.vscode, .idea)
+- System files:
+  * .DS_Store (macOS)
+  * Thumbs.db (Windows)
+- Log files:
+  * npm-debug.log*
+  * yarn-debug.log*
+  * yarn-error.log*
+- Cache directories:
+  * .cache
+  * .parcel-cache
+- Local development overrides:
+  * *.local
+- Testing artifacts:
+  * coverage
+  * .nyc_output
+
+Key Features Across Configurations:
+--------------------------------
+1. Strict Type Checking:
+   - All TypeScript configs enable strict mode
+   - Enforce type safety throughout the project
+   - Check for unused variables and parameters
+
+2. Module Resolution:
+   - Uses "bundler" mode for modern build tools
+   - Enables TypeScript to work with Vite
+   - Supports ES modules throughout
+
+3. Development Features:
+   - Source maps enabled for debugging
+   - Hot module replacement support
+   - Development server configuration
+
+4. Build Optimization:
+   - Skip type checking of dependencies
+   - Efficient bundling configuration
+   - Production build optimizations
+
+Best Practices Implemented:
+-------------------------
+1. Separation of Concerns:
+   - Split TypeScript configuration by purpose
+   - Modular package management
+   - Clear dependency organization
+
+2. Security:
+   - Private package setting
+   - Strict type checking
+   - Dependency version control
+   - Proper gitignore patterns to prevent sensitive data exposure
+
+3. Development Experience:
+   - Hot reload enabled
+   - Source map support
+   - Comprehensive lint rules
+   - Clean workspace with proper file ignoring
+
+4. Performance:
+   - Optimized build configuration
+   - Efficient module resolution
+   - Smart dependency management
+   - Minimal git repository size through proper ignoring

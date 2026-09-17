@@ -1,0 +1,9 @@
+{
+  // Specify root files and configuration options
+  "files": [],
+  // Reference other TypeScript configuration files
+  "references": [
+    { "path": "./tsconfig.app.json" },  // Application-specific configuration
+    { "path": "./tsconfig.node.json" }  // Node.js-specific configuration
+  ]
+}
