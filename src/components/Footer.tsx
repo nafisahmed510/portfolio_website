@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import { Monogram } from './Monogram';
 
 export function Footer() {
   // Hooks for navigation and location
@@ -33,14 +34,13 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo and Description Section */}
             <div className="space-y-4">
-              <h3 className="logo-text text-xl">
-                <button 
-                  onClick={() => handleNavigation('/')} 
-                  className="hover:opacity-80 transition-opacity"
-                >
-                  Nofishy
-                </button>
-              </h3>
+              <button
+                onClick={() => handleNavigation('/')}
+                className="text-white hover:text-gray-300 transition-colors"
+                aria-label="Home"
+              >
+                <Monogram className="h-8 w-8" />
+              </button>
               <p className="text-gray-400 text-sm">
                 A Proud Bengali 🐯
               </p>

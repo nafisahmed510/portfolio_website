@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Monogram } from './Monogram';
 
 export function Navigation() {
   const location = useLocation();
@@ -56,13 +57,10 @@ export function Navigation() {
       <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="logo-text text-sm sm:text-xl tracking-wider shrink-0"
-          >
-            <Link to="/">Nofishy</Link>
+          <motion.div className="shrink-0">
+            <Link to="/" aria-label="Home" className="block text-white hover:text-gray-300 transition-colors">
+              <Monogram className="h-8 w-8 sm:h-9 sm:w-9" />
+            </Link>
           </motion.div>
           
           {/* Navigation Links */}

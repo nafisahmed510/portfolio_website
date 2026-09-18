@@ -22,10 +22,7 @@ function App() {
         {/* Main content rendered after loading */}
         {!isLoading && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="min-h-screen bg-black relative"
+            className="min-h-screen bg-ink relative"
           >
             {/* Background glow effect */}
             <div className="fixed inset-0 pointer-events-none">

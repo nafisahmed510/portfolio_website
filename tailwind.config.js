@@ -15,13 +15,9 @@ export default {
       // Custom color definitions
       colors: {
         silver: '#C0C0C0',
-        // Single accent, used sparingly: the name, primary buttons, links.
-        accent: {
-          DEFAULT: '#7C7CF9',
-          hover: '#6B6BF0',
-          soft: '#A5A5FB',
-        },
-        ink: '#0B0B10',
+        // Monochrome by choice: black, grey, white. Hierarchy comes from
+        // weight, size and spacing rather than colour.
+        ink: '#0A0A0A',
       }
     },
   },

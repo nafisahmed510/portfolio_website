@@ -61,7 +61,7 @@
            text-sm font-medium transition-colors;
   }
   .btn-primary {
-    @apply btn bg-accent text-white hover:bg-accent-hover;
+    @apply btn bg-white text-black hover:bg-gray-200;
   }
   .btn-secondary {
     @apply btn border border-gray-700 text-gray-200 hover:border-gray-500 hover:text-white;

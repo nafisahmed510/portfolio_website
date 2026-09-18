@@ -15,14 +15,11 @@ export function AboutPage() {
           </motion.h1>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-transparent rounded-lg transform group-hover:scale-105 transition-transform duration-300" />
+            <motion.div>
               <img
                 src="/me.JPG"
                 alt="Nafis Ahmed"
-                className="w-full h-auto rounded-lg shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300"
+                className="w-full max-w-[320px] aspect-square object-cover object-[50%_28%] rounded-xl border border-gray-800"
               />
             </motion.div>
 
@@ -84,93 +81,100 @@ export function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800 mb-16">
-              <h3 className="text-xl font-bold text-white mb-4">Education</h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-silver font-semibold mb-1">
-                    B.S. Computer Science, Minor in Risk Management &amp; Insurance
-                  </h4>
-                  <p className="text-sm text-gray-400">
-                    St. John&apos;s University &bull; Class of 2027 &bull; GPA 3.7
-                  </p>
-                  <p className="mt-3 text-gray-300">
-                    Dean&apos;s List 2023&ndash;24 and 2024&ndash;25 &bull; Peer Mentor, Project A.I.M. &bull;
-                    Junior Senator, Student Government &bull; President, Bengali Students Association
-                  </p>
-                  <p className="mt-3 text-gray-300">
-                    <span className="text-silver">Relevant coursework:</span> Advanced Data Structures,
-                    Software Design Methods, Database Management, Analysis of Algorithms,
-                    Discrete Mathematics, Programming Fundamentals
-                  </p>
-                </div>
-              </div>
+            <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800 mb-10">
+              <p className="label-mono mb-3">Education</p>
+              <h4 className="text-lg font-bold text-white mb-1">
+                B.S. Computer Science <span className="text-gray-500">|</span> Minor in Risk Management and Insurance
+              </h4>
+              <p className="text-sm text-gray-400 mb-3">
+                St. John&apos;s University &nbsp;|&nbsp; Class of 2027 &nbsp;|&nbsp; GPA: 3.7
+              </p>
+              <p className="text-gray-300 mb-3">
+                Dean&apos;s List 2023&ndash;24, 2024&ndash;25, 2025&ndash;26 &nbsp;&middot;&nbsp; Peer Mentor, Project A.I.M.
+                &nbsp;&middot;&nbsp; Junior Senator, Student Government &nbsp;&middot;&nbsp; President, Bengali Students Association
+              </p>
+              <p className="text-gray-400 text-sm">
+                <span className="text-gray-300">Relevant coursework:</span> Advanced Data Structures,
+                Database Management, Analysis of Algorithms, Software Design Methods,
+                Discrete Mathematics, Programming Fundamentals
+              </p>
+            </div>
+
+            <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800 mb-10">
+              <p className="label-mono mb-3">Certifications</p>
+              <p className="text-gray-300">
+                <span className="text-white font-semibold">The Institutes</span> &mdash; Insurance Essentials
+                &nbsp;&middot;&nbsp; Underwriting Essentials (2026)
+              </p>
             </div>
 
             <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800">
-              <h3 className="text-xl font-bold text-white mb-6">Experience</h3>
+              <p className="label-mono mb-6">Professional experience</p>
               <div className="space-y-8">
                 <div className="border-l-2 border-gray-700 pl-5">
-                  <h4 className="text-silver font-semibold mb-1">Data Operations Intern</h4>
-                  <p className="text-sm text-gray-400">MS Transverse &bull; Jun 2026 &ndash; Aug 2026</p>
-                  <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <h4 className="text-white font-semibold">
+                      Data Operations Intern <span className="text-gray-500">|</span> MS Transverse
+                    </h4>
+                    <p className="font-mono text-xs text-gray-500">Jun 2026 &ndash; Aug 2026</p>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 mt-3 space-y-2 text-gray-300">
                     <li>
-                      Proposed and built an automated Python reconciliation engine for a key monthly
-                      premium-balancing control, cutting cycle time by over 70% and per-program
-                      processing from tens of minutes to under two.
+                      Proposed and built an automated Python reconciliation engine for a key
+                      monthly premium-balancing control, cutting cycle time by over 70% and
+                      per-program processing from tens of minutes to under two.
                     </li>
                     <li>
-                      Built a rulebook-driven knowledge base encoding reconciliation logic across the
-                      program portfolio, validating automated output to the penny against manual totals.
+                      Built a rulebook-driven knowledge base encoding reconciliation logic across
+                      the program portfolio, validating automated output to the penny against
+                      manual totals.
                     </li>
                     <li>
-                      Diagnosed and fixed root-cause data-parsing bugs &mdash; including
-                      accounting-format negative values &mdash; that were silently skewing totals.
+                      Deployed the engine as a deterministic, script-backed Claude Skill for
+                      repeatable, auditable results; authored adoption documentation used team-wide.
                     </li>
                     <li>
-                      Deployed the engine as a deterministic, script-backed Claude Skill for repeatable,
-                      auditable results, and authored the adoption documentation used team-wide.
-                    </li>
-                    <li>
-                      Designed a second control rating and QC-checking automated data mappings, and built
-                      a tool generating interactive Excel PivotTables for audit response.
+                      Designed a second control rating and QC-checking automated data mappings, and
+                      built a tool generating interactive Excel PivotTables for audit response.
                     </li>
                   </ul>
                 </div>
 
                 <div className="border-l-2 border-gray-800 pl-5">
-                  <h4 className="text-silver font-semibold mb-1">Artificial Intelligence Intern</h4>
-                  <p className="text-sm text-gray-400">SJ Innovation &bull; Jul 2025 &ndash; Aug 2025</p>
-                  <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <h4 className="text-white font-semibold">
+                      Artificial Intelligence Intern <span className="text-gray-500">|</span> SJ Innovation
+                    </h4>
+                    <p className="font-mono text-xs text-gray-500">Jul 2025 &ndash; Aug 2025</p>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 mt-3 space-y-2 text-gray-300">
                     <li>
-                      Completed 40+ hours of AI-focused training, working hands-on with the Collab AI
-                      platform, GitHub and collaborative tooling.
+                      Completed 40+ hours of applied AI training on the Collab AI platform and
+                      contributed to team-delivered AI solutions using GitHub and collaborative
+                      tooling.
                     </li>
-                    <li>Collaborated on real-world AI solutions, delivering all assigned tasks on schedule.</li>
                   </ul>
                 </div>
 
                 <div className="border-l-2 border-gray-800 pl-5">
-                  <h4 className="text-silver font-semibold mb-1">Marketing &amp; Labs Assistant</h4>
-                  <p className="text-sm text-gray-400">St. John&apos;s University &bull; Jan 2025 &ndash; Present</p>
-                  <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <h4 className="text-white font-semibold">
+                      Additional Experience <span className="text-gray-500">|</span> St. John&apos;s University
+                    </h4>
+                    <p className="font-mono text-xs text-gray-500">Aug 2024 &ndash; Present</p>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 mt-3 space-y-2 text-gray-300">
                     <li>
-                      Maintain AV equipment for classes and events at 95% uptime, resolving 10+ technical
-                      issues weekly.
+                      Marketing &amp; Labs Assistant (Jan 2025&ndash;Present) &middot; A/V Assistant,
+                      Summer Conference Services (May&ndash;Aug 2025) &middot; Student Worker,
+                      International Admissions (Aug&ndash;Dec 2024).
                     </li>
-                    <li>Create promotional materials and manage social media for department events.</li>
+                    <li>
+                      Maintained AV systems at 95% uptime across 50+ inspected spaces, resolved 10+
+                      technical issues weekly through structured work-ticket systems, and maintained
+                      student information databases.
+                    </li>
                   </ul>
-                </div>
-
-                <div className="pl-5 text-sm text-gray-500 border-l-2 border-gray-900">
-                  <p className="mb-1">
-                    <span className="text-gray-400">A/V Assistant</span>, Summer Conference Services,
-                    St. John&apos;s University &bull; May 2025 &ndash; Aug 2025
-                  </p>
-                  <p>
-                    <span className="text-gray-400">Student Worker</span>, International Admissions,
-                    St. John&apos;s University &bull; Aug 2024 &ndash; Dec 2024
-                  </p>
                 </div>
               </div>
             </div>

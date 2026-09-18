@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Linkedin, Github } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { SkillsGrid } from '../components/SkillsGrid';
+import { AvatarCave } from '../components/AvatarCave';
 
 export function HomePage() {
   const location = useLocation();
@@ -27,15 +28,9 @@ export function HomePage() {
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
             {/* ---- left: the words ---- */}
             <AnimatedSection>
-              <div className="flex flex-wrap gap-2 mb-8">
-                {['python', 'sql', 'agents', 'data ops'].map((t) => (
-                  <span key={t} className="tag">{t}</span>
-                ))}
-              </div>
-
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6">
-                <span className="block text-white">Hello, I&apos;m</span>
-                <span className="block text-accent">Nafis Ahmed.</span>
+                <span className="block text-gray-500 font-semibold text-3xl sm:text-4xl lg:text-5xl mb-2">Hello, I&apos;m</span>
+                <span className="block text-white">Nafis Ahmed.</span>
               </h1>
 
               <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mb-10">
@@ -55,17 +50,7 @@ export function HomePage() {
 
             {/* ---- right: the portrait ---- */}
             <AnimatedSection>
-              <div className="relative">
-                <div className="absolute -inset-6 bg-accent/10 blur-3xl rounded-full" />
-                <div className="relative rounded-2xl border border-gray-800 bg-gray-900/40 p-2">
-                  <img
-                    src="/me.JPG"
-                    alt="Nafis Ahmed"
-                    loading="eager"
-                    className="w-full rounded-xl object-cover aspect-[4/5] object-[50%_30%]"
-                  />
-                </div>
-              </div>
+              <AvatarCave />
             </AnimatedSection>
           </div>
         </div>
