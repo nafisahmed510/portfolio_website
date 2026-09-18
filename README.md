@@ -14,8 +14,8 @@ Deployed on Netlify.
 
 ```
 src/
-  components/   AnimatedSection, BengaliMatrixLoader, Footer,
-                Navigation, ReconciliationDiagram, SkillsGrid, TypewriterText
+  components/   AnimatedSection, AvatarCave, Footer, LetterLoader,
+                Monogram, Navigation, ReconciliationDiagram, SkillsGrid
   pages/        HomePage, WorkPage, AboutPage, NotFoundPage
 public/         images, favicon, og-image, _redirects
 ```
@@ -25,12 +25,18 @@ like `/work` resolve on Netlify rather than 404ing.
 
 ## Notes on a few decisions
 
-**The loader.** The Bengali Matrix intro is timed by wall clock, not frame count,
-and has a hard timeout plus a skip control. Browsers throttle
-`requestAnimationFrame` in background tabs, and a frame-counted animation there
-never finishes — which left the whole site on a black screen for anyone who
-opened it in a background tab. It also bails out immediately when the tab is
-hidden or the visitor prefers reduced motion.
+**The loader.** A single glyph cycles through Bengali and Latin characters and
+settles on the H the hero opens with, standing in exactly the position the
+headline will occupy. It is timed by wall clock with a hard timeout and a skip
+control, and bails out immediately when the tab is hidden or the visitor prefers
+reduced motion.
+
+**Animations never gate visibility.** Entrance animations that start at
+`opacity: 0` are a trap: `animate` runs on requestAnimationFrame and
+`whileInView` on IntersectionObserver, and neither is delivered to a background
+tab — which is how a recruiter opens a link. The site was once entirely blank
+there. `AnimatedSection` is now the only reveal mechanism and renders content
+outright when the tab is hidden. Do not reintroduce per-element opacity gates.
 
 **Fonts.** Noto Sans Bengali is loaded once via `<link>` in `index.html`. It must
 not also be declared in `@font-face` with a `src` pointing at a Google Fonts

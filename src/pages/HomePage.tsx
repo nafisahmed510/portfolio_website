@@ -38,6 +38,10 @@ export function HomePage() {
                 analytics and risk, with experiences spanning data operations, process
                 automation and AI and agent development, alongside insurance and risk
                 fundamentals.
+                <span
+                  aria-hidden="true"
+                  className="animate-blink ml-1 inline-block h-[1.05em] w-[2px] translate-y-[0.18em] bg-gray-500"
+                />
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -53,29 +57,6 @@ export function HomePage() {
               <AvatarCave />
             </AnimatedSection>
           </div>
-        </div>
-      </section>
-
-      {/* Proof strip */}
-      <section className="px-6 pb-8">
-        <div className="container mx-auto max-w-6xl">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-800 border border-gray-800 rounded-xl overflow-hidden">
-              {[
-                { figure: 'Data + AI', label: 'three internships across data operations, AI and technical support' },
-                { figure: 'CS + Insurance', label: 'computer science with a risk management minor and two Institutes certifications' },
-                { figure: 'Building', label: 'agent systems, automation tooling and this site' },
-              ].map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  className="bg-gray-900/60 px-6 py-7"
-                >
-                  <div className="text-lg font-bold text-white mb-1">{stat.figure}</div>
-                  <div className="text-sm text-gray-500 leading-relaxed">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 

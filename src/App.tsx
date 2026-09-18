@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BengaliMatrixLoader } from './components/BengaliMatrixLoader';
+import { LetterLoader } from './components/LetterLoader';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -15,8 +15,8 @@ function App() {
 
   return (
     <>
-      {/* Initial loading screen with Bengali Matrix effect */}
-      {isLoading && <BengaliMatrixLoader onLoadingComplete={() => setIsLoading(false)} />}
+      {/* Initial loading screen: a single glyph settling into the hero's H */}
+      {isLoading && <LetterLoader onLoadingComplete={() => setIsLoading(false)} />}
       
       <AnimatePresence>
         {/* Main content rendered after loading */}
