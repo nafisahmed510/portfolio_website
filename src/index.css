@@ -148,14 +148,18 @@
     @apply px-4;
   }
   
-  /* Mobile navigation */
+  /* Mobile navigation — padding here is what decides whether the nav row
+     fits. Four links at px-4 cost 128px of padding alone, which pushed the
+     Resume link off a 375px viewport. */
   .nav-link {
-    @apply py-1 px-2 text-sm;
+    @apply py-1 px-1.5 text-xs;
   }
-  
-  /* Mobile logo size */
+
+  /* Mobile logo size. This previously said 1.25rem — identical to the desktop
+     size, so it shrank nothing despite its name. */
   .logo-text {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
   }
 }
 

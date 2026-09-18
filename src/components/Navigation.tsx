@@ -53,20 +53,20 @@ export function Navigation() {
       }}
       className="fixed w-full top-0 backdrop-blur-sm z-50 transition-all duration-300 border-b border-gray-800/50"
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="logo-text text-xl tracking-wider"
+            className="logo-text text-sm sm:text-xl tracking-wider shrink-0"
           >
             <Link to="/">Nofishy</Link>
           </motion.div>
           
           {/* Navigation Links */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-2 sm:gap-6 md:gap-8 text-xs sm:text-base">
             <motion.div
               whileHover={{ y: -2 }}
               className={`nav-link ${location.pathname === '/' ? 'text-white' : ''}`}
@@ -90,7 +90,7 @@ export function Navigation() {
               href="/NafisAhmedResume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-link border border-gray-700 rounded px-3 py-1 hover:border-gray-500 transition-colors"
+              className="nav-link border border-gray-700 rounded px-2 sm:px-3 py-1 hover:border-gray-500 transition-colors whitespace-nowrap"
             >
               Resume
             </motion.a>

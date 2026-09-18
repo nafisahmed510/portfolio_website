@@ -12,9 +12,12 @@ const stages = [
 
 export function ReconciliationDiagram() {
   return (
+    // Scrolls rather than scales below ~620px: shrunk to a phone width the
+    // labels render at about 5px, which is a diagram nobody can read.
+    <div className="overflow-x-auto">
     <svg
       viewBox="0 0 860 200"
-      className="w-full h-auto"
+      className="w-full min-w-[620px] h-auto"
       role="img"
       aria-label="Pipeline diagram: source files feed a parser, then a rulebook engine, then a validation step checked against manual totals, producing a reconciliation report and PivotTables."
     >
@@ -69,5 +72,6 @@ export function ReconciliationDiagram() {
       <line x1={130} y1={30} x2={730} y2={30} stroke="#374151"
             strokeWidth="1" strokeDasharray="4 4" markerEnd="url(#arrow)" />
     </svg>
+    </div>
   );
 }
