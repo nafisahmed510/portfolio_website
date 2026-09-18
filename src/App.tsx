@@ -6,6 +6,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
+import { WorkPage } from './pages/WorkPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             {/* Route configuration */}
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/work" element={<WorkPage />} />
               <Route path="/about" element={<AboutPage />} />
               {/* Catch-all: Netlify serves index.html for every path, so without
                   this an unknown URL rendered nav + footer around an empty void. */}

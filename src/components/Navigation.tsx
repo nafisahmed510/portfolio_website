@@ -75,6 +75,12 @@ export function Navigation() {
             </motion.div>
             <motion.div
               whileHover={{ y: -2 }}
+              className={`nav-link ${location.pathname === '/work' ? 'text-white' : ''}`}
+            >
+              <Link to="/work">Work</Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -2 }}
               className={`nav-link ${location.pathname === '/about' ? 'text-white' : ''}`}
             >
               <Link to="/about">About</Link>

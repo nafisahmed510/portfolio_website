@@ -1,117 +1,61 @@
-# Modern Developer Portfolio
+# nofishy.space
 
-![Portfolio Preview](public/preview.png)
+Personal site for Nafis Ahmed — CS and Risk Management student at St. John's University,
+working at the seam between software engineering and data.
 
-A modern, responsive developer portfolio built with React, TypeScript, and Framer Motion. Features a stunning Bengali Matrix animation loader, interactive 3D tech globe, and smooth animations throughout.
+Live at **[nofishy.space](https://www.nofishy.space)**.
 
-## ✨ Features
+## Stack
 
-- 🎨 Modern UI/UX with sleek animations
-- 🌐 Interactive 3D Tech Globe using Three.js
-- 📱 Fully responsive design
-- ⚡ Fast performance with Vite
-- 🔄 Custom loading animations
-- 🎯 SEO optimized
-- 🎨 Tailwind CSS for styling
-- 🔥 Framer Motion animations
+React 18 · TypeScript · Vite · Tailwind CSS · Framer Motion · React Router
+Deployed on Netlify.
 
-## 🛠️ Built With
+## Structure
 
-- React 18
-- TypeScript
-- Framer Motion
-- Three.js
-- Tailwind CSS
-- Vite
-
-## 🚀 Quick Start
-
-1. Clone the repository:
-```bash
-git clone https://github.com/nafisahmed510/portfolio.git
+```
+src/
+  components/   AnimatedSection, BengaliMatrixLoader, Footer,
+                Navigation, ReconciliationDiagram, SkillsGrid, TypewriterText
+  pages/        HomePage, WorkPage, AboutPage, NotFoundPage
+public/         images, favicon, og-image, _redirects
 ```
 
-2. Install dependencies:
+`public/_redirects` holds the SPA rewrite (`/* /index.html 200`) so deep links
+like `/work` resolve on Netlify rather than 404ing.
+
+## Notes on a few decisions
+
+**The loader.** The Bengali Matrix intro is timed by wall clock, not frame count,
+and has a hard timeout plus a skip control. Browsers throttle
+`requestAnimationFrame` in background tabs, and a frame-counted animation there
+never finishes — which left the whole site on a black screen for anyone who
+opened it in a background tab. It also bails out immediately when the tab is
+hidden or the visitor prefers reduced motion.
+
+**Fonts.** Noto Sans Bengali is loaded once via `<link>` in `index.html`. It must
+not also be declared in `@font-face` with a `src` pointing at a Google Fonts
+stylesheet URL — that URL returns CSS, not a font binary, and the browser fails
+to decode it on every page load.
+
+**Skill tooltips.** Rendered only while active. Kept mounted at `opacity: 0` they
+still occupied layout and pushed the page wider than the viewport on mobile.
+
+## Development
+
 ```bash
-cd portfolio
 npm install
+npm run dev      # dev server
+npm run build    # production build to dist/
+npm run preview  # serve the built output
+npm run lint
 ```
 
-3. Start the development server:
-```bash
-npm run dev
-```
+## Author
 
-4. Build for production:
-```bash
-npm run build
-```
+Nafis Ahmed — [nofishy.space](https://www.nofishy.space) ·
+[github.com/nafisahmed510](https://github.com/nafisahmed510) ·
+[linkedin.com/in/nafisahmed510](https://linkedin.com/in/nafisahmed510)
 
-## 📁 Project Structure
+## License
 
-```
-portfolio/
-├── src/
-│   ├── components/     # Reusable components
-│   ├── pages/         # Page components
-│   ├── App.tsx        # Main app component
-│   └── main.tsx       # Entry point
-├── public/            # Static assets
-└── package.json       # Dependencies and scripts
-```
-
-## 🎯 Key Components
-
-- **Bengali Matrix Loader**: Custom loading animation with Bengali characters
-- **3D Tech Globe**: Interactive visualization of tech stack
-- **Animated Sections**: Smooth scroll animations
-- **Skills Grid**: Dynamic grid of technical skills
-- **Contact Form**: Interactive contact section
-
-## 🌟 Performance
-
-- Optimized asset loading
-- Lazy-loaded components
-- Efficient animation handling
-- Fast build times with Vite
-
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Fluid typography
-- Adaptive layouts
-- Touch-friendly interactions
-
-## 🔧 Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-## 📄 License
-
-MIT License - feel free to use this project as a template for your own portfolio!
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/nafisahmed510/portfolio/issues).
-
-## 👤 Author
-
-**Nafis Ahmed**
-- GitHub: [@nafisahmed510](https://github.com/nafisahmed510)
-- LinkedIn: [nafisahmed510](https://linkedin.com/in/nafisahmed510)
-
-## ⭐ Show your support
-
-Give a ⭐️ if you like this project!
+MIT

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { TypewriterText } from '../components/TypewriterText';
 import { SkillsGrid } from '../components/SkillsGrid';
+import { ReconciliationDiagram } from '../components/ReconciliationDiagram';
 
 export function HomePage() {
   const location = useLocation();
@@ -109,112 +110,63 @@ export function HomePage() {
 
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="space-y-32">
-            <AnimatedSection>
-              <div className="flex flex-col md:flex-row items-center gap-12">
-                <div className="flex-1">
-                  <motion.h3
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    className="text-silver mb-2"
-                  >
-                    Featured Project
-                  </motion.h3>
-                  <motion.h4
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="text-2xl font-bold mb-4 text-white"
-                  >
-                    Instagram Automation & Kortix Migration
-                  </motion.h4>
-                  <motion.p
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-gray-400 mb-6"
-                  >
-                    An advanced Instagram automation system with seamless Kortix platform migration capabilities. Built with Python, this project automates social media workflows, manages content scheduling, and provides robust API integrations for efficient social media management.
-                  </motion.p>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="flex gap-4"
-                  >
-                    <motion.a
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      href="https://github.com/nafisahmed510/digital-marketing-automation-agent"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-silver hover:text-white"
-                    >
-                      <Github size={20} />
-                      Code
-                    </motion.a>
-                  </motion.div>
-                </div>
-                <motion.div
-                  className="flex-1"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="bg-gray-900 p-4 rounded-lg transform transition-transform hover:scale-[1.02]">
-                    <img
-                      src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&q=80&w=1600"
-                      alt="Instagram Automation Dashboard"
-                      className="w-full rounded border border-gray-700"
-                    />
-                  </div>
-                </motion.div>
-              </div>
-            </AnimatedSection>
+          <AnimatedSection>
+            <div className="flex items-baseline justify-between mb-12">
+              <h2 className="text-3xl font-bold text-white">Selected Work</h2>
+              <Link to="/work" className="text-silver hover:text-white text-sm transition-colors">
+                All case studies &rarr;
+              </Link>
+            </div>
+          </AnimatedSection>
 
-            <AnimatedSection>
-              <div className="flex flex-col md:flex-row items-center gap-12">
-                <div className="flex-1">
-                  <motion.h3
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    className="text-silver mb-2"
-                  >
-                    Featured Project
-                  </motion.h3>
-                  <motion.h4
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="text-2xl font-bold mb-4 text-white"
-                  >
-                    Local AI Lab Experimentation
-                  </motion.h4>
-                  <motion.p
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-gray-400 mb-6"
-                  >
-                    Setting up and running AI models locally on campus infrastructure. Working with Deepseek, Gemini, and Qwen models using VS Code for API integration and development.
-                  </motion.p>
+          <AnimatedSection>
+            <Link to="/work" className="block group mb-8">
+              <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 md:p-8 transition-colors group-hover:border-gray-600">
+                <p className="text-xs tracking-[0.2em] text-silver mb-3">DATA OPERATIONS &bull; SUMMER 2026</p>
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Automating a monthly premium reconciliation control
+                </h3>
+                <p className="text-gray-400 mb-6 max-w-3xl">
+                  A rulebook-driven Python engine that replaced a manual balancing control
+                  &mdash; cycle time down over 70%, validated to the penny against the totals
+                  it replaced.
+                </p>
+                <div className="bg-black/40 border border-gray-800 rounded-lg p-4">
+                  <ReconciliationDiagram />
                 </div>
-                <motion.div
-                  className="flex-1"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="bg-gray-900 p-4 rounded-lg transform transition-transform hover:scale-[1.02]">
-                    <img
-                      src="/Gaming.jpg"
-                      alt="AI Lab Setup"
-                      className="w-full rounded border border-gray-700"
-                    />
-                  </div>
-                </motion.div>
               </div>
-            </AnimatedSection>
+            </Link>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                meta: 'SIDE PROJECT \u00b7 IN PROGRESS',
+                title: 'Multi-agent personal assistant',
+                body: 'A supervisor agent routing to specialist sub-agents, with the orchestration loop written from scratch before adopting a framework.',
+              },
+              {
+                meta: 'SIDE PROJECT',
+                title: 'Digital marketing automation agent',
+                body: 'Social media triage and engagement analysis, migrated from JavaScript to Python for modular integration into the Kortix platform.',
+              },
+            ].map((proj, i) => (
+              <AnimatedSection key={proj.title}>
+                <Link to="/work" className="block h-full group">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="h-full bg-gray-900/50 border border-gray-800 rounded-lg p-6 transition-colors group-hover:border-gray-600"
+                  >
+                    <p className="text-xs tracking-[0.2em] text-silver mb-3">{proj.meta}</p>
+                    <h3 className="text-xl font-bold text-white mb-3">{proj.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{proj.body}</p>
+                  </motion.div>
+                </Link>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>

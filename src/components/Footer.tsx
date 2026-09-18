@@ -58,6 +58,12 @@ export function Footer() {
                   Home
                 </button>
                 <button
+                  onClick={() => handleNavigation('/work')}
+                  className="text-left text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  Work
+                </button>
+                <button
                   onClick={() => handleNavigation('/about')}
                   className="text-left text-gray-400 hover:text-white transition-colors text-sm"
                 >
