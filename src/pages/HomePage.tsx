@@ -38,17 +38,11 @@ export function HomePage() {
                 <span className="block text-accent">Nafis Ahmed.</span>
               </h1>
 
-              <p className="text-lg text-gray-400 leading-relaxed max-w-xl mb-4">
+              <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mb-10">
                 Building towards a career that blends software engineering with data,
-                analytics and risk.
-              </p>
-
-              <p className="text-gray-500 leading-relaxed max-w-xl mb-10">
-                My experience spans data operations, process automation and AI and agent
-                development, alongside insurance and risk fundamentals. I&apos;m a computer
-                science and risk management student at St. John&apos;s University who likes
-                problems where the answer has to be provably right &mdash; and who would
-                rather learn a new domain than settle into one.
+                analytics and risk with experiences spanning data operations, process
+                automation and AI and agent development, alongside insurance and risk
+                fundamentals.
               </p>
 
               <div className="flex flex-wrap gap-3">
