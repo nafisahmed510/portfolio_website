@@ -79,6 +79,15 @@ export function Navigation() {
             >
               <Link to="/about">About</Link>
             </motion.div>
+            <motion.a
+              whileHover={{ y: -2 }}
+              href="/NafisAhmedResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link border border-gray-700 rounded px-3 py-1 hover:border-gray-500 transition-colors"
+            >
+              Resume
+            </motion.a>
           </div>
         </div>
       </div>

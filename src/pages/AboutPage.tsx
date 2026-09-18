@@ -96,40 +96,89 @@ export function AboutPage() {
               <h3 className="text-xl font-bold text-white mb-4">Education</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-silver font-semibold mb-2">Bachelor of Science in Computer Science</h4>
-                  <p className="text-sm text-gray-400">St. John's University • 3.8 GPA</p>
-                  <p className="mt-2 text-gray-300">
-                    • Dean's List<br />
-                    • Project AIM Peer Mentor<br />
-                    • Relevant Coursework: Programming Fundamentals I & II (Java), Data Structures, 
-                      Advanced Data Structures, Software Design Methods, Discrete Mathematics
+                  <h4 className="text-silver font-semibold mb-1">
+                    B.S. Computer Science, Minor in Risk Management &amp; Insurance
+                  </h4>
+                  <p className="text-sm text-gray-400">
+                    St. John&apos;s University &bull; Class of 2027 &bull; GPA 3.7
+                  </p>
+                  <p className="mt-3 text-gray-300">
+                    Dean&apos;s List 2023&ndash;24 and 2024&ndash;25 &bull; Peer Mentor, Project A.I.M. &bull;
+                    Junior Senator, Student Government &bull; President, Bengali Students Association
+                  </p>
+                  <p className="mt-3 text-gray-300">
+                    <span className="text-silver">Relevant coursework:</span> Advanced Data Structures,
+                    Software Design Methods, Database Management, Analysis of Algorithms,
+                    Discrete Mathematics, Programming Fundamentals
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800">
-              <h3 className="text-xl font-bold text-white mb-6">Professional Experience</h3>
+              <h3 className="text-xl font-bold text-white mb-6">Experience</h3>
               <div className="space-y-8">
-                <div>
-                  <h4 className="text-silver font-semibold mb-2">CCPS Marketing and Labs Assistant</h4>
-                  <p className="text-sm text-gray-400">St. John's University • Jan 2025 - Present</p>
-                  <ul className="list-disc list-inside mt-2 space-y-2 text-gray-300">
-                    <li>Set up and maintain AV equipment for meetings and presentations</li>
-                    <li>Provide technical support to professors and students</li>
-                    <li>Collaborate with marketing team on social media content</li>
-                    <li>Assist in organizing and executing lab events</li>
-                    <li>Offer general office assistance and coordination</li>
+                <div className="border-l-2 border-gray-700 pl-5">
+                  <h4 className="text-silver font-semibold mb-1">Data Operations Intern</h4>
+                  <p className="text-sm text-gray-400">MS Transverse &bull; Jun 2026 &ndash; Aug 2026</p>
+                  <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+                    <li>
+                      Proposed and built an automated Python reconciliation engine for a key monthly
+                      premium-balancing control, cutting cycle time by over 70% and per-program
+                      processing from tens of minutes to under two.
+                    </li>
+                    <li>
+                      Built a rulebook-driven knowledge base encoding reconciliation logic across the
+                      program portfolio, validating automated output to the penny against manual totals.
+                    </li>
+                    <li>
+                      Diagnosed and fixed root-cause data-parsing bugs &mdash; including
+                      accounting-format negative values &mdash; that were silently skewing totals.
+                    </li>
+                    <li>
+                      Deployed the engine as a deterministic, script-backed Claude Skill for repeatable,
+                      auditable results, and authored the adoption documentation used team-wide.
+                    </li>
+                    <li>
+                      Designed a second control rating and QC-checking automated data mappings, and built
+                      a tool generating interactive Excel PivotTables for audit response.
+                    </li>
                   </ul>
                 </div>
-                <div>
-                  <h4 className="text-silver font-semibold mb-2">International Admissions Office</h4>
-                  <p className="text-sm text-gray-400">St. John's University • Aug 2024 - Dec 2024</p>
-                  <ul className="list-disc list-inside mt-2 space-y-2 text-gray-300">
-                    <li>Maintained student information databases</li>
-                    <li>Managed office social media accounts</li>
-                    <li>Assisted international students with admissions process</li>
+
+                <div className="border-l-2 border-gray-800 pl-5">
+                  <h4 className="text-silver font-semibold mb-1">Artificial Intelligence Intern</h4>
+                  <p className="text-sm text-gray-400">SJ Innovation &bull; Jul 2025 &ndash; Aug 2025</p>
+                  <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+                    <li>
+                      Completed 40+ hours of AI-focused training, working hands-on with the Collab AI
+                      platform, GitHub and collaborative tooling.
+                    </li>
+                    <li>Collaborated on real-world AI solutions, delivering all assigned tasks on schedule.</li>
                   </ul>
+                </div>
+
+                <div className="border-l-2 border-gray-800 pl-5">
+                  <h4 className="text-silver font-semibold mb-1">Marketing &amp; Labs Assistant</h4>
+                  <p className="text-sm text-gray-400">St. John&apos;s University &bull; Jan 2025 &ndash; Present</p>
+                  <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+                    <li>
+                      Maintain AV equipment for classes and events at 95% uptime, resolving 10+ technical
+                      issues weekly.
+                    </li>
+                    <li>Create promotional materials and manage social media for department events.</li>
+                  </ul>
+                </div>
+
+                <div className="pl-5 text-sm text-gray-500 border-l-2 border-gray-900">
+                  <p className="mb-1">
+                    <span className="text-gray-400">A/V Assistant</span>, Summer Conference Services,
+                    St. John&apos;s University &bull; May 2025 &ndash; Aug 2025
+                  </p>
+                  <p>
+                    <span className="text-gray-400">Student Worker</span>, International Admissions,
+                    St. John&apos;s University &bull; Aug 2024 &ndash; Dec 2024
+                  </p>
                 </div>
               </div>
             </div>

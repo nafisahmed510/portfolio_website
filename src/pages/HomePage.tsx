@@ -48,8 +48,8 @@ export function HomePage() {
             </motion.div>
             
             <TypewriterText 
-              text="I'm a Software Developer" 
-              className="text-4xl font-bold mb-8 text-white" 
+              text="I build systems that make data trustworthy" 
+              className="text-3xl md:text-4xl font-bold mb-8 text-white" 
               delay={1000} 
             />
             
@@ -59,8 +59,35 @@ export function HomePage() {
               transition={{ delay: 2 }}
               className="text-gray-400 max-w-2xl mx-auto"
             >
-              Specializing in AI, LLMs, and Agentic Frameworks, with expertise in programming languages like Java, Python, and SQL. Skilled in API integration, AWS, and developing intelligent software solutions that drive innovation and efficiency.
+              Computer Science and Risk Management student at St. John's University.
+              Last summer I automated an insurance premium reconciliation control on a
+              data operations team — cutting cycle time by over 70% and validating to
+              the penny. I work across Python, SQL and agentic tooling, and I'm most
+              interested in the seam where software engineering meets data.
             </motion.p>
+          </AnimatedSection>
+
+          {/* Proof strip: the three facts worth leading with */}
+          <AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-800 border border-gray-800 rounded-lg overflow-hidden mb-8">
+              {[
+                { figure: '70%', label: 'reconciliation cycle time removed' },
+                { figure: 'To the penny', label: 'automated output validated against manual totals' },
+                { figure: '3', label: 'internships across data, AI and operations' },
+              ].map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-gray-900/70 px-6 py-8 text-center"
+                >
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">{stat.figure}</div>
+                  <div className="text-xs text-gray-400 leading-relaxed">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -73,7 +100,7 @@ export function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-3xl font-bold mb-12 text-center text-white"
             >
-              Technologies I Work With
+              What I Work With
             </motion.h2>
             <SkillsGrid />
           </AnimatedSection>
