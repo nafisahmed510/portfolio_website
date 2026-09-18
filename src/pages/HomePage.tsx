@@ -5,7 +5,6 @@ import { Mail, Linkedin, Github } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { TypewriterText } from '../components/TypewriterText';
 import { SkillsGrid } from '../components/SkillsGrid';
-import { ReconciliationDiagram } from '../components/ReconciliationDiagram';
 
 export function HomePage() {
   const location = useLocation();
@@ -60,11 +59,12 @@ export function HomePage() {
               transition={{ delay: 2 }}
               className="text-gray-400 max-w-2xl mx-auto"
             >
-              Computer Science and Risk Management student at St. John's University.
-              Last summer I automated an insurance premium reconciliation control on a
-              data operations team — cutting cycle time by over 70% and validating to
-              the penny. I work across Python, SQL and agentic tooling, and I'm most
-              interested in the seam where software engineering meets data.
+              Computer Science and Risk Management student at St. John&apos;s University,
+              building at the seam where software engineering meets data. I write Python,
+              SQL and agent tooling; I&apos;ve worked on data operations in insurance and
+              on AI teams; and I lead a student association and a university senate seat
+              when I&apos;m not shipping something. I like problems where the answer has to
+              be provably right, and I&apos;d rather learn a new domain than settle into one.
             </motion.p>
           </AnimatedSection>
 
@@ -72,9 +72,9 @@ export function HomePage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-800 border border-gray-800 rounded-lg overflow-hidden mb-8">
               {[
-                { figure: '70%', label: 'reconciliation cycle time removed' },
-                { figure: 'To the penny', label: 'automated output validated against manual totals' },
-                { figure: '3', label: 'internships across data, AI and operations' },
+                { figure: 'Data + AI', label: 'three internships across data operations, AI and technical support' },
+                { figure: 'CS + Insurance', label: 'computer science with a risk management minor and two Institutes certifications' },
+                { figure: 'Building', label: 'agent systems, automation tooling and this site' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -119,27 +119,13 @@ export function HomePage() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection>
-            <Link to="/work" className="block group mb-8">
-              <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 md:p-8 transition-colors group-hover:border-gray-600">
-                <p className="text-xs tracking-[0.2em] text-silver mb-3">DATA OPERATIONS &bull; SUMMER 2026</p>
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  Automating a monthly premium reconciliation control
-                </h3>
-                <p className="text-gray-400 mb-6 max-w-3xl">
-                  A rulebook-driven Python engine that replaced a manual balancing control
-                  &mdash; cycle time down over 70%, validated to the penny against the totals
-                  it replaced.
-                </p>
-                <div className="bg-black/40 border border-gray-800 rounded-lg p-4">
-                  <ReconciliationDiagram />
-                </div>
-              </div>
-            </Link>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
+              {
+                meta: 'DATA OPERATIONS',
+                title: 'Premium reconciliation engine',
+                body: 'A rulebook-driven Python engine replacing a manual monthly balancing control, validated against the totals it replaced.',
+              },
               {
                 meta: 'SIDE PROJECT \u00b7 IN PROGRESS',
                 title: 'Multi-agent personal assistant',
@@ -147,8 +133,8 @@ export function HomePage() {
               },
               {
                 meta: 'SIDE PROJECT',
-                title: 'Digital marketing automation agent',
-                body: 'Social media triage and engagement analysis, migrated from JavaScript to Python for modular integration into the Kortix platform.',
+                title: 'Marketing automation agent',
+                body: 'Social media triage and engagement analysis, migrated from JavaScript to Python for modular integration into Kortix.',
               },
             ].map((proj, i) => (
               <AnimatedSection key={proj.title}>
@@ -157,11 +143,11 @@ export function HomePage() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
+                    transition={{ delay: i * 0.08 }}
                     className="h-full bg-gray-900/50 border border-gray-800 rounded-lg p-6 transition-colors group-hover:border-gray-600"
                   >
                     <p className="text-xs tracking-[0.2em] text-silver mb-3">{proj.meta}</p>
-                    <h3 className="text-xl font-bold text-white mb-3">{proj.title}</h3>
+                    <h3 className="text-lg font-bold text-white mb-3">{proj.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{proj.body}</p>
                   </motion.div>
                 </Link>
