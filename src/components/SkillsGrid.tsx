@@ -7,22 +7,22 @@ const groups = [
   {
     title: 'Languages & Data',
     note: 'Where most of the work happens',
-    items: ['Python', 'SQL', 'Java', 'MySQL'],
+    items: ['Python', 'Java', 'SQL'],
   },
   {
     title: 'Data Tooling',
     note: 'Turning messy inputs into checkable output',
-    items: ['pandas', 'openpyxl', 'Excel / PivotTables', 'Power BI', 'n8n'],
+    items: ['pandas', 'openpyxl', 'Excel (PivotTables, automation)', 'Power BI', 'n8n'],
   },
   {
     title: 'AI & Agents',
     note: 'Automation that has to stay auditable',
-    items: ['LangChain', 'Claude Skills', 'Agentic frameworks', 'Prompt engineering'],
+    items: ['Claude Skills development', 'Agentic frameworks', 'Prompt engineering'],
   },
   {
     title: 'Platform & Web',
     note: 'Shipping and keeping it running',
-    items: ['AWS', 'Git', 'React', 'TypeScript'],
+    items: ['AWS', 'Git', 'VS Code', 'React', 'TypeScript'],
   },
   {
     title: 'Domain',
@@ -42,10 +42,6 @@ export function SkillsGrid() {
       {groups.map((group, index) => (
         <motion.div
           key={group.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: index * 0.08 }}
           className={`flex flex-col p-6 rounded-lg bg-gray-900 border transition-colors duration-300 ${
             group.highlight
               ? 'border-gray-600 hover:border-gray-500 lg:col-span-2'

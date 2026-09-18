@@ -9,18 +9,13 @@ export function AboutPage() {
       <div className="container mx-auto max-w-4xl">
         <AnimatedSection>
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold text-white mb-8 text-center"
+            className="text-4xl md:text-5xl font-extrabold text-white mb-8"
           >
-            About Me
+            About me
           </motion.h1>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
               className="relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-transparent rounded-lg transform group-hover:scale-105 transition-transform duration-300" />
@@ -32,9 +27,6 @@ export function AboutPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
               className="space-y-6"
             >
               <p className="text-gray-300">

@@ -4,14 +4,10 @@ import { Github } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { ReconciliationDiagram } from '../components/ReconciliationDiagram';
 
-function Meta({ children }: { children: React.ReactNode }) {
-  return <p className="text-xs tracking-[0.2em] text-silver mb-3">{children}</p>;
-}
-
 function Block({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="mb-6">
-      <h4 className="text-silver text-sm font-semibold mb-2">{label}</h4>
+      <h4 className="label-mono mb-2">{label}</h4>
       <div className="text-gray-300 leading-relaxed space-y-3">{children}</div>
     </div>
   );
@@ -21,9 +17,6 @@ function Case({ children }: { children: React.ReactNode }) {
   return (
     <AnimatedSection>
       <motion.article
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 md:p-10 mb-12"
       >
         {children}
@@ -37,14 +30,13 @@ export function WorkPage() {
     <div className="pt-32 px-6 pb-12">
       <div className="container mx-auto max-w-4xl">
         <AnimatedSection>
+          <p className="label-mono mb-3">Selected work</p>
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold text-white mb-4 text-center"
+            className="text-4xl md:text-5xl font-extrabold text-white mb-4"
           >
-            Selected Work
+            Things I&apos;ve built
           </motion.h1>
-          <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-gray-400 mb-16 max-w-2xl text-lg">
             Three things I&apos;ve built, and how I thought about them. Where the work was
             done for an employer, details stay at the level I can share publicly.
           </p>
@@ -52,7 +44,7 @@ export function WorkPage() {
 
         {/* ---------- 1. Reconciliation engine ---------- */}
         <Case>
-          <Meta>DATA OPERATIONS &bull; SUMMER 2026</Meta>
+          <p className="label-mono mb-3">DATA OPERATIONS &bull; SUMMER 2026</p>
           <h2 className="text-2xl font-bold text-white mb-6">
             Automating a monthly premium reconciliation control
           </h2>
@@ -107,7 +99,7 @@ export function WorkPage() {
 
         {/* ---------- 2. Agent system ---------- */}
         <Case>
-          <Meta>SIDE PROJECT &bull; IN PROGRESS</Meta>
+          <p className="label-mono mb-3">SIDE PROJECT &bull; IN PROGRESS</p>
           <h2 className="text-2xl font-bold text-white mb-6">
             A multi-agent personal assistant, built from scratch
           </h2>
@@ -151,7 +143,7 @@ export function WorkPage() {
 
         {/* ---------- 3. Marketing automation agent ---------- */}
         <Case>
-          <Meta>SIDE PROJECT</Meta>
+          <p className="label-mono mb-3">SIDE PROJECT</p>
           <h2 className="text-2xl font-bold text-white mb-6">
             Digital marketing automation agent
           </h2>

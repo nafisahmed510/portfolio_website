@@ -14,10 +14,22 @@
 
   /* Global body styles */
   body {
-    @apply bg-black text-white overflow-x-hidden;
-    font-family: 'Consolas', monospace;
+    @apply bg-ink text-white overflow-x-hidden font-sans antialiased;
     touch-action: manipulation; /* Optimize touch interactions */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+
+  /* Headings: tight tracking and leading is most of what separates a display
+     setting from a default one. */
+  h1, h2, h3, h4 {
+    @apply font-sans font-bold tracking-tight;
+    text-wrap: balance;
+  }
+  h1 { @apply leading-[1.05]; }
+  h2, h3 { @apply leading-tight; }
+
+  p { text-wrap: pretty; }
 
   /* Noto Sans Bengali is loaded via <link> in index.html. Do not redeclare it
      with @font-face pointing at the stylesheet URL — that is CSS, not a font
@@ -30,32 +42,38 @@
   .no-decoration {
     text-decoration: none;
   }
+
+  /* Small monospace label. This is what mono is FOR — eyebrows, metadata,
+     tags — not paragraphs. */
+  .label-mono {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-gray-500;
+  }
+
+  /* Pill tag */
+  .tag {
+    @apply inline-flex items-center rounded-full border border-gray-800
+           bg-white/[0.03] px-3 py-1 font-mono text-xs text-gray-300;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3
+           text-sm font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-hover;
+  }
+  .btn-secondary {
+    @apply btn border border-gray-700 text-gray-200 hover:border-gray-500 hover:text-white;
+  }
 }
 
-/* Logo text styling with gradient and glow effect */
+/* Wordmark. Previously an uppercase Orbitron gradient with a text-shadow glow
+   and a gradient underline — four effects competing on two words. A wordmark
+   should be one confident weight and nothing else. */
 .logo-text {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  position: relative;
-  background: linear-gradient(to bottom, #ffffff, #808080);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-/* Logo text underline effect */
-.logo-text::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #c0c0c0, transparent);
-  transform: scaleX(0.9);
-  opacity: 0.7;
+  @apply font-sans font-bold tracking-tight text-white;
+  text-transform: lowercase;
 }
 
 /* Glow effect container */
@@ -158,8 +176,7 @@
   /* Mobile logo size. This previously said 1.25rem — identical to the desktop
      size, so it shrank nothing despite its name. */
   .logo-text {
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+    font-size: 1rem;
   }
 }
 

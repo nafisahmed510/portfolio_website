@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Github } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
-import { TypewriterText } from '../components/TypewriterText';
 import { SkillsGrid } from '../components/SkillsGrid';
 
 export function HomePage() {
@@ -23,54 +22,66 @@ export function HomePage() {
 
   return (
     <>
-      <section className="pt-32 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <AnimatedSection className="text-center mb-16">
-            <TypewriterText 
-              text="Hello! I am Nafis Ahmed" 
-              className="text-silver mb-4" 
-              delay={0} 
-            />
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              className="relative inline-block mb-8"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-gray-500/10 blur-xl transform scale-150" />
-                <img
-                  src="/avatar.png"
-                  alt="Profile"
-                  className="relative w-[8.4rem] h-[8.4rem] rounded-full border-2 border-gray-700 object-cover"
-                />
+      <section className="pt-32 md:pt-40 pb-16 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+            {/* ---- left: the words ---- */}
+            <AnimatedSection>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {['python', 'sql', 'agents', 'data ops'].map((t) => (
+                  <span key={t} className="tag">{t}</span>
+                ))}
               </div>
-            </motion.div>
-            
-            <TypewriterText 
-              text="I build systems that make data trustworthy" 
-              className="text-3xl md:text-4xl font-bold mb-8 text-white" 
-              delay={1000} 
-            />
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2 }}
-              className="text-gray-400 max-w-2xl mx-auto"
-            >
-              Computer Science and Risk Management student at St. John&apos;s University,
-              building at the seam where software engineering meets data. I write Python,
-              SQL and agent tooling; I&apos;ve worked on data operations in insurance and
-              on AI teams; and I lead a student association and a university senate seat
-              when I&apos;m not shipping something. I like problems where the answer has to
-              be provably right, and I&apos;d rather learn a new domain than settle into one.
-            </motion.p>
-          </AnimatedSection>
 
-          {/* Proof strip: the three facts worth leading with */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6">
+                <span className="block text-white">Hello, I&apos;m</span>
+                <span className="block text-accent">Nafis Ahmed.</span>
+              </h1>
+
+              <p className="text-lg text-gray-400 leading-relaxed max-w-xl mb-4">
+                Building towards a career that blends software engineering with data,
+                analytics and risk.
+              </p>
+
+              <p className="text-gray-500 leading-relaxed max-w-xl mb-10">
+                My experience spans data operations, process automation and AI and agent
+                development, alongside insurance and risk fundamentals. I&apos;m a computer
+                science and risk management student at St. John&apos;s University who likes
+                problems where the answer has to be provably right &mdash; and who would
+                rather learn a new domain than settle into one.
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                <Link to="/work" className="btn-primary">
+                  See my work <ArrowRight size={16} />
+                </Link>
+                <a href="#contact" className="btn-secondary">Get in touch</a>
+              </div>
+            </AnimatedSection>
+
+            {/* ---- right: the portrait ---- */}
+            <AnimatedSection>
+              <div className="relative">
+                <div className="absolute -inset-6 bg-accent/10 blur-3xl rounded-full" />
+                <div className="relative rounded-2xl border border-gray-800 bg-gray-900/40 p-2">
+                  <img
+                    src="/me.JPG"
+                    alt="Nafis Ahmed"
+                    loading="eager"
+                    className="w-full rounded-xl object-cover aspect-[4/5] object-[50%_30%]"
+                  />
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Proof strip */}
+      <section className="px-6 pb-8">
+        <div className="container mx-auto max-w-6xl">
           <AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-800 border border-gray-800 rounded-lg overflow-hidden mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-800 border border-gray-800 rounded-xl overflow-hidden">
               {[
                 { figure: 'Data + AI', label: 'three internships across data operations, AI and technical support' },
                 { figure: 'CS + Insurance', label: 'computer science with a risk management minor and two Institutes certifications' },
@@ -78,14 +89,10 @@ export function HomePage() {
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-gray-900/70 px-6 py-8 text-center"
+                  className="bg-gray-900/60 px-6 py-7"
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">{stat.figure}</div>
-                  <div className="text-xs text-gray-400 leading-relaxed">{stat.label}</div>
+                  <div className="text-lg font-bold text-white mb-1">{stat.figure}</div>
+                  <div className="text-sm text-gray-500 leading-relaxed">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -96,12 +103,11 @@ export function HomePage() {
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection>
+            <p className="label-mono mb-3">Toolkit</p>
             <motion.h2 
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl font-bold mb-12 text-center text-white"
+              className="text-3xl font-bold mb-10 text-white"
             >
-              What I Work With
+              What I work with
             </motion.h2>
             <SkillsGrid />
           </AnimatedSection>
@@ -111,8 +117,9 @@ export function HomePage() {
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <AnimatedSection>
-            <div className="flex items-baseline justify-between mb-12">
-              <h2 className="text-3xl font-bold text-white">Selected Work</h2>
+            <p className="label-mono mb-3">Selected work</p>
+            <div className="flex items-baseline justify-between mb-10">
+              <h2 className="text-3xl font-bold text-white">Things I&apos;ve built</h2>
               <Link to="/work" className="text-silver hover:text-white text-sm transition-colors">
                 All case studies &rarr;
               </Link>
@@ -140,13 +147,9 @@ export function HomePage() {
               <AnimatedSection key={proj.title}>
                 <Link to="/work" className="block h-full group">
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
                     className="h-full bg-gray-900/50 border border-gray-800 rounded-lg p-6 transition-colors group-hover:border-gray-600"
                   >
-                    <p className="text-xs tracking-[0.2em] text-silver mb-3">{proj.meta}</p>
+                    <p className="label-mono mb-3">{proj.meta}</p>
                     <h3 className="text-lg font-bold text-white mb-3">{proj.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{proj.body}</p>
                   </motion.div>
@@ -160,9 +163,9 @@ export function HomePage() {
       <section id="contact" className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold mb-12 text-white text-center">Contact Me</h2>
-            <div className="max-w-2xl mx-auto">
-              <h3 className="text-xl font-semibold mb-8 text-silver text-center">Connect With Me</h3>
+            <p className="label-mono mb-3">Contact</p>
+            <h2 className="text-3xl font-bold mb-10 text-white">Get in touch</h2>
+            <div className="max-w-2xl">
               <div className="space-y-6">
                 {[
                   { icon: Mail, text: 'nafisahmed510@gmail.com', href: 'mailto:nafisahmed510@gmail.com' },
@@ -176,9 +179,6 @@ export function HomePage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-4 text-gray-400 hover:text-white p-6 rounded-lg border border-transparent hover:border-gray-700 transition-all bg-gray-900/50"
                     whileHover={{ scale: 1.02 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
                   >
                     <contact.icon size={24} />
                     <span className="text-lg">{contact.text}</span>
