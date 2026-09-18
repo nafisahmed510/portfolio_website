@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Linkedin, Github } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { SkillsGrid } from '../components/SkillsGrid';
+import { Band, BandSplit } from '../components/Band';
 import { AvatarCave } from '../components/AvatarCave';
 
 export function HomePage() {
@@ -60,95 +61,87 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <AnimatedSection>
-            <p className="label-mono mb-3">Toolkit</p>
-            <motion.h2 
-              className="text-3xl font-bold mb-10 text-white"
-            >
-              What I work with
-            </motion.h2>
+      {/* ---------------- toolkit ---------------- */}
+      <Band tone="raised">
+        <AnimatedSection>
+          <BandSplit eyebrow="Toolkit" heading="What I work with">
             <SkillsGrid />
-          </AnimatedSection>
-        </div>
-      </section>
+          </BandSplit>
+        </AnimatedSection>
+      </Band>
 
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <AnimatedSection>
-            <p className="label-mono mb-3">Selected work</p>
-            <div className="flex items-baseline justify-between mb-10">
-              <h2 className="text-3xl font-bold text-white">Things I&apos;ve built</h2>
-              <Link to="/work" className="text-silver hover:text-white text-sm transition-colors">
-                All case studies &rarr;
-              </Link>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                meta: 'DATA OPERATIONS',
-                title: 'Premium reconciliation engine',
-                body: 'A rulebook-driven Python engine replacing a manual monthly balancing control, validated against the totals it replaced.',
-              },
-              {
-                meta: 'SIDE PROJECT \u00b7 IN PROGRESS',
-                title: 'Multi-agent personal assistant',
-                body: 'A supervisor agent routing to specialist sub-agents, with the orchestration loop written from scratch before adopting a framework.',
-              },
-              {
-                meta: 'SIDE PROJECT',
-                title: 'Marketing automation agent',
-                body: 'Social media triage and engagement analysis, migrated from JavaScript to Python for modular integration into Kortix.',
-              },
-            ].map((proj, i) => (
-              <AnimatedSection key={proj.title}>
-                <Link to="/work" className="block h-full group">
-                  <motion.div
-                    className="h-full bg-gray-900/50 border border-gray-800 rounded-lg p-6 transition-colors group-hover:border-gray-600"
-                  >
-                    <p className="label-mono mb-3">{proj.meta}</p>
-                    <h3 className="text-lg font-bold text-white mb-3">{proj.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{proj.body}</p>
-                  </motion.div>
+      {/* ---------------- work ---------------- */}
+      <Band>
+        <AnimatedSection>
+          <BandSplit eyebrow="Selected work" heading="Things I've built">
+            <div className="grid gap-px bg-gray-800/80 sm:grid-cols-3">
+              {[
+                {
+                  meta: 'Data operations',
+                  title: 'Premium reconciliation engine',
+                  body: 'A rulebook-driven Python engine replacing a manual monthly balancing control, validated against the totals it replaced.',
+                },
+                {
+                  meta: 'Side project \u00b7 in progress',
+                  title: 'Multi-agent assistant',
+                  body: 'A supervisor agent routing to specialist sub-agents, with the orchestration loop written from scratch before adopting a framework.',
+                },
+                {
+                  meta: 'Side project',
+                  title: 'Marketing automation agent',
+                  body: 'Social media triage and engagement analysis, migrated from JavaScript to Python for modular integration into Kortix.',
+                },
+              ].map((proj) => (
+                <Link
+                  key={proj.title}
+                  to="/work"
+                  className="group block bg-ink p-6 transition-colors hover:bg-[#151515]"
+                >
+                  <p className="label-mono mb-4">{proj.meta}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">{proj.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{proj.body}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm text-gray-500 transition-colors group-hover:text-white">
+                    Read the case study <ArrowRight size={14} />
+                  </span>
                 </Link>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <AnimatedSection>
-            <p className="label-mono mb-3">Contact</p>
-            <h2 className="text-3xl font-bold mb-10 text-white">Get in touch</h2>
-            <div className="max-w-2xl">
-              <div className="space-y-6">
-                {[
-                  { icon: Mail, text: 'nafisahmed510@gmail.com', href: 'mailto:nafisahmed510@gmail.com' },
-                  { icon: Linkedin, text: 'linkedin.com/in/nafisahmed510', href: 'https://linkedin.com/in/nafisahmed510' },
-                  { icon: Github, text: 'github.com/nafisahmed510', href: 'https://github.com/nafisahmed510' },
-                ].map((contact, index) => (
-                  <motion.a
-                    key={index}
-                    href={contact.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-4 text-gray-400 hover:text-white p-6 rounded-lg border border-transparent hover:border-gray-700 transition-all bg-gray-900/50"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <contact.icon size={24} />
-                    <span className="text-lg">{contact.text}</span>
-                  </motion.a>
-                ))}
-              </div>
+              ))}
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </BandSplit>
+        </AnimatedSection>
+      </Band>
+
+      {/* ---------------- contact ---------------- */}
+      <Band tone="raised" id="contact">
+        <AnimatedSection>
+          <BandSplit eyebrow="Contact" heading="Any question, or a role you think fits.">
+            <p className="text-gray-400 leading-relaxed mb-8 max-w-xl">
+              The quickest way to reach me is email. I read everything, and I answer.
+            </p>
+            <ul className="divide-y divide-gray-800/80 border-t border-gray-800/80">
+              {[
+                { icon: Mail, label: 'Email', value: 'nafisahmed510@gmail.com', href: 'mailto:nafisahmed510@gmail.com' },
+                { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/nafisahmed510', href: 'https://linkedin.com/in/nafisahmed510' },
+                { icon: Github, label: 'GitHub', value: 'github.com/nafisahmed510', href: 'https://github.com/nafisahmed510' },
+              ].map((c) => (
+                <li key={c.label}>
+                  <a
+                    href={c.href}
+                    target={c.href.startsWith('http') ? '_blank' : undefined}
+                    rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="group flex items-center gap-4 py-4 text-gray-300 transition-colors hover:text-white"
+                  >
+                    <c.icon size={16} className="text-gray-600 transition-colors group-hover:text-gray-300" />
+                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-gray-500 w-24 shrink-0">
+                      {c.label}
+                    </span>
+                    <span className="truncate">{c.value}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </BandSplit>
+        </AnimatedSection>
+      </Band>
     </>
   );
 }

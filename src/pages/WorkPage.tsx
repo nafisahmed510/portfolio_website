@@ -17,7 +17,7 @@ function Case({ children }: { children: React.ReactNode }) {
   return (
     <AnimatedSection>
       <motion.article
-        className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 md:p-10 mb-12"
+        className="border-t border-gray-800/80 pt-10 mb-16"
       >
         {children}
       </motion.article>
@@ -27,7 +27,7 @@ function Case({ children }: { children: React.ReactNode }) {
 
 export function WorkPage() {
   return (
-    <div className="pt-32 px-6 pb-12">
+    <div className="pt-32 px-6 pb-24">
       <div className="container mx-auto max-w-4xl">
         <AnimatedSection>
           <p className="label-mono mb-3">Selected work</p>
@@ -49,7 +49,7 @@ export function WorkPage() {
             Automating a monthly premium reconciliation control
           </h2>
 
-          <div className="bg-black/40 border border-gray-800 rounded-lg p-4 md:p-6 mb-8">
+          <div className="bg-[#0d0d0d] p-4 md:p-6 mb-10">
             <ReconciliationDiagram />
           </div>
 

@@ -27,7 +27,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="mt-32 border-t border-gray-800">
+    <footer className="border-t border-gray-800/80 bg-ink">
       <div className="container mx-auto px-6">
         <div className="py-8">
           {/* Footer grid layout */}
@@ -48,7 +48,7 @@ export function Footer() {
 
             {/* Quick Links Section */}
             <div className="space-y-4">
-              <h3 className="text-silver font-semibold">Quick Links</h3>
+              <p className="label-mono">Quick links</p>
               <div className="flex flex-col space-y-2">
                 {/* Navigation buttons with hover effects */}
                 <button
@@ -80,7 +80,7 @@ export function Footer() {
 
             {/* Social Links Section */}
             <div className="space-y-4">
-              <h3 className="text-silver font-semibold">Connect</h3>
+              <p className="label-mono">Connect</p>
               <div className="flex space-x-4">
                 {/* Social media links with icons */}
                 <a

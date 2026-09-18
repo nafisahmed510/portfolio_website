@@ -5,7 +5,7 @@ import { Mail, Linkedin, Github } from 'lucide-react';
 
 export function AboutPage() {
   return (
-    <div className="pt-32 px-6">
+    <div className="pt-32 px-6 pb-24">
       <div className="container mx-auto max-w-4xl">
         <AnimatedSection>
           <motion.h1
@@ -66,8 +66,8 @@ export function AboutPage() {
           </div>
 
           <AnimatedSection className="space-y-8">
-            <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800 mb-16">
-              <h3 className="text-xl font-bold text-white mb-4">Professional Philosophy</h3>
+            <div className="border-t border-gray-800/80 pt-8 mb-12">
+              <p className="label-mono mb-4">Professional philosophy</p>
               <p className="text-gray-300">
                 Technology has been my passion since childhood, starting with video games and evolving into a deep 
                 fascination with AI and programming. I believe in creating technology that not only solves problems 
@@ -81,7 +81,7 @@ export function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800 mb-10">
+            <div className="border-t border-gray-800/80 pt-8 mb-12">
               <p className="label-mono mb-3">Education</p>
               <h4 className="text-lg font-bold text-white mb-1">
                 B.S. Computer Science <span className="text-gray-500">|</span> Minor in Risk Management and Insurance
@@ -100,7 +100,7 @@ export function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800 mb-10">
+            <div className="border-t border-gray-800/80 pt-8 mb-12">
               <p className="label-mono mb-3">Certifications</p>
               <p className="text-gray-300">
                 <span className="text-white font-semibold">The Institutes</span> &mdash; Insurance Essentials
@@ -108,7 +108,7 @@ export function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-gray-900/50 p-8 rounded-lg border border-gray-800">
+            <div className="border-t border-gray-800/80 pt-8">
               <p className="label-mono mb-6">Professional experience</p>
               <div className="space-y-8">
                 <div className="border-l-2 border-gray-700 pl-5">
