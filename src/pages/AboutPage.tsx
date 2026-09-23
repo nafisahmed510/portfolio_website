@@ -26,7 +26,7 @@ function Role({
           {title} <span className="font-normal text-gray-500">&nbsp;|&nbsp;</span>{' '}
           <span className="font-normal text-gray-300">{org}</span>
         </h3>
-        <p className="font-mono text-xs text-gray-500">{dates}</p>
+        <p className="font-mono text-xs text-gray-400">{dates}</p>
       </div>
       <ul className="mt-3 list-disc list-outside ml-5 space-y-2 text-gray-400 leading-relaxed">
         {children}
@@ -98,7 +98,7 @@ export function AboutPage() {
                   target={l.href.startsWith('http') ? '_blank' : undefined}
                   rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   aria-label={l.label}
-                  className="text-gray-600 transition-colors hover:text-white"
+                  className="text-gray-400 transition-colors hover:text-white"
                 >
                   <l.icon size={18} />
                 </a>
@@ -121,7 +121,7 @@ export function AboutPage() {
                 <span className="font-semibold text-white">
                   Minor in Risk Management and Insurance
                 </span>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-gray-400">
                   Class of 2027 &nbsp;·&nbsp; GPA 3.7
                 </p>
               </Fact>

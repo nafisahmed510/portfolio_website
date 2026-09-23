@@ -21,7 +21,7 @@ function RepoLink({ href, children }: { href: string; children: ReactNode }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="mt-6 inline-flex items-center gap-2 font-mono text-xs text-gray-500 transition-colors hover:text-white"
+      className="mt-6 inline-flex items-center gap-2 font-mono text-xs text-gray-400 transition-colors hover:text-white"
     >
       <Github size={14} /> {children}
     </a>

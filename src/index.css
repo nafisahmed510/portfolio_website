@@ -46,7 +46,7 @@
   /* Small monospace label. This is what mono is FOR — eyebrows, metadata,
      tags — not paragraphs. */
   .label-mono {
-    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-gray-500;
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-gray-400;
   }
 
   /* Pill tag */

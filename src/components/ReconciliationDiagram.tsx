@@ -41,7 +41,7 @@ export function ReconciliationDiagram() {
             {s.label}
           </text>
           <text x={s.x + 70} y={104} textAnchor="middle"
-                fill="#8b8f98" fontSize="11" fontFamily="monospace">
+                fill="#9ca3af" fontSize="11" fontFamily="monospace">
             {s.sub}
           </text>
           {i < stages.length - 1 && (
@@ -61,7 +61,7 @@ export function ReconciliationDiagram() {
         reconciles to the penny
       </text>
 
-      <text x={80} y={34} textAnchor="middle" fill="#6b7280"
+      <text x={80} y={34} textAnchor="middle" fill="#9ca3af"
             fontSize="11" fontFamily="monospace">
         tens of minutes
       </text>

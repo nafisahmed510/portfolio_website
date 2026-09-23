@@ -100,7 +100,7 @@ export function HomePage() {
                   <p className="label-mono mb-4">{proj.meta}</p>
                   <h3 className="text-lg font-bold text-white mb-3">{proj.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed">{proj.body}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm text-gray-500 transition-colors group-hover:text-white">
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors group-hover:text-white">
                     Read the case study <ArrowRight size={14} />
                   </span>
                 </Link>
@@ -130,8 +130,8 @@ export function HomePage() {
                     rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="group flex items-center gap-4 py-4 text-gray-300 transition-colors hover:text-white"
                   >
-                    <c.icon size={16} className="text-gray-600 transition-colors group-hover:text-gray-300" />
-                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-gray-500 w-24 shrink-0">
+                    <c.icon size={16} className="text-gray-400 transition-colors group-hover:text-white" />
+                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-gray-400 w-24 shrink-0">
                       {c.label}
                     </span>
                     <span className="truncate">{c.value}</span>

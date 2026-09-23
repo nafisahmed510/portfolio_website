@@ -34,7 +34,7 @@ export function SkillsGrid() {
     <dl className="divide-y divide-gray-800/80 border-t border-gray-800/80">
       {groups.map((group) => (
         <div key={group.title} className="grid gap-2 py-5 sm:grid-cols-[13rem_1fr] sm:gap-8">
-          <dt className="font-mono text-xs uppercase tracking-[0.14em] text-gray-500 pt-1">
+          <dt className="font-mono text-xs uppercase tracking-[0.14em] text-gray-400 pt-1">
             {group.title}
           </dt>
           <dd className="text-gray-300 leading-relaxed">
