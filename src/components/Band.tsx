@@ -26,6 +26,25 @@ export function Band({
   );
 }
 
+// Page masthead: the one place a page uses the largest type.
+export function PageHead({
+  eyebrow,
+  title,
+  lede,
+}: {
+  eyebrow: string;
+  title: string;
+  lede?: string;
+}) {
+  return (
+    <div className="max-w-3xl">
+      <p className="label-mono mb-4">&mdash;&nbsp;&nbsp;{eyebrow}</p>
+      <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">{title}</h1>
+      {lede && <p className="text-lg text-gray-400 leading-relaxed">{lede}</p>}
+    </div>
+  );
+}
+
 export function BandSplit({
   eyebrow,
   heading,
