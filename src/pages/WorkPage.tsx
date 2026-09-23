@@ -65,8 +65,8 @@ export function WorkPage() {
               <Note label="The approach">
                 <p>
                   I proposed and built a Python engine to do the balancing. The logic
-                  lives in a rulebook &mdash; a knowledge base encoding how each program
-                  reconciles &mdash; rather than being hard-coded, so a change in one
+                  lives in a rulebook, a knowledge base encoding how each program
+                  reconciles, rather than being hard-coded, so a change in one
                   program&apos;s treatment is a data change, not a code change.
                 </p>
                 <p>
@@ -91,8 +91,8 @@ export function WorkPage() {
                 <p>
                   The parsing bug is the part I think about. A silent wrong answer is
                   worse than a crash, because nothing tells you to go looking. Validating
-                  against a known-good total wasn&apos;t box-ticking &mdash; it was the
-                  only reason the bug was ever found.
+                  against a known-good total wasn&apos;t box-ticking. It was the only
+                  reason the bug was ever found.
                 </p>
               </Note>
             </div>
@@ -111,7 +111,7 @@ export function WorkPage() {
               <Note label="The idea">
                 <p>
                   A supervisor agent takes a request, routes it to specialist sub-agents
-                  &mdash; inbox, calendar, research, notes &mdash; delegates the work, and
+                  (inbox, calendar, research, notes), delegates the work, and
                   assembles the result.
                 </p>
               </Note>
@@ -128,7 +128,7 @@ export function WorkPage() {
 
               <Note label="Status">
                 <p>
-                  Early &mdash; Python 3.12 with Pydantic for typed message contracts and
+                  Early. Python 3.12 with Pydantic for typed message contracts and
                   SQLite plus embeddings for memory. The repository is public and the
                   README tracks which phase it&apos;s in, so what you see there is where it
                   actually is.
@@ -149,8 +149,8 @@ export function WorkPage() {
             <div className="divide-y divide-gray-800/80 border-t border-gray-800/80">
               <Note label="What it does">
                 <p>
-                  Automates social media triage and engagement analysis &mdash; the
-                  repetitive read-and-sort work that comes before any actual decision.
+                  Automates social media triage and engagement analysis: the repetitive
+                  read-and-sort work that comes before any actual decision.
                 </p>
               </Note>
 

@@ -73,15 +73,15 @@ export function AboutPage() {
                   filled with the vibrant colors of Bengali culture, the warmth of family
                   gatherings, and the excitement of festival celebrations. I&apos;m a proud
                   Bengali who loves to share my culture with friends, especially through our
-                  cuisine &mdash; Kacchi Biryani and Phuchka above all.
+                  cuisine, above all Kacchi Biryani and Phuchka.
                 </p>
                 <p>
                   My journey to America in 2023 was both thrilling and challenging. As an
                   international student at St. John&apos;s University I&apos;ve found a new
                   world of opportunities while staying close to my roots. When I&apos;m not
                   coding or studying you&apos;ll find me on the soccer field with my
-                  intramural team &mdash; where I&apos;ve made some of my closest friends,
-                  and learned that teamwork crosses cultural boundaries.
+                  intramural team, where I&apos;ve made some of my closest friends and
+                  learned that teamwork crosses cultural boundaries.
                 </p>
               </div>
             </div>
@@ -126,7 +126,7 @@ export function AboutPage() {
                 </p>
               </Fact>
               <Fact label="Honours">
-                Dean&apos;s List 2023&ndash;24, 2024&ndash;25, 2025&ndash;26
+                Dean&apos;s List 2023/24, 2024/25, 2025/26
               </Fact>
               <Fact label="Leadership">
                 Peer Mentor, Project A.I.M. &nbsp;·&nbsp; Junior Senator, Student Government
@@ -138,7 +138,7 @@ export function AboutPage() {
                 Discrete Mathematics &nbsp;·&nbsp; Programming Fundamentals
               </Fact>
               <Fact label="Certifications">
-                <span className="font-semibold text-white">The Institutes</span> &mdash;
+                <span className="font-semibold text-white">The Institutes</span>:
                 Insurance Essentials &nbsp;·&nbsp; Underwriting Essentials (2026)
               </Fact>
             </div>
@@ -155,7 +155,7 @@ export function AboutPage() {
                 primary
                 title="Data Operations Intern"
                 org="MS Transverse"
-                dates="Jun 2026 – Aug 2026"
+                dates="Jun 2026 to Aug 2026"
               >
                 <li>
                   Proposed and built an automated Python reconciliation engine for a key
@@ -182,7 +182,7 @@ export function AboutPage() {
               <Role
                 title="Artificial Intelligence Intern"
                 org="SJ Innovation"
-                dates="Jul 2025 – Aug 2025"
+                dates="Jul 2025 to Aug 2025"
               >
                 <li>
                   Completed 40+ hours of applied AI training on the Collab AI platform and
@@ -194,12 +194,12 @@ export function AboutPage() {
               <Role
                 title="Additional Experience"
                 org="St. John's University"
-                dates="Aug 2024 – Present"
+                dates="Aug 2024 to present"
               >
                 <li>
-                  Marketing &amp; Labs Assistant (Jan 2025&ndash;Present) &middot; A/V
-                  Assistant, Summer Conference Services (May&ndash;Aug 2025) &middot;
-                  Student Worker, International Admissions (Aug&ndash;Dec 2024).
+                  Marketing &amp; Labs Assistant (Jan 2025 to present) &middot; A/V
+                  Assistant, Summer Conference Services (May to Aug 2025) &middot;
+                  Student Worker, International Admissions (Aug to Dec 2024).
                 </li>
                 <li>
                   Maintained AV systems at 95% uptime across 50+ inspected spaces, resolved

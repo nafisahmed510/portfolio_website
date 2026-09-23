@@ -38,7 +38,7 @@ export function PageHead({
 }) {
   return (
     <div className="max-w-3xl">
-      <p className="label-mono mb-4">&mdash;&nbsp;&nbsp;{eyebrow}</p>
+      <p className="label-mono mb-4">{eyebrow}</p>
       <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">{title}</h1>
       {lede && <p className="text-lg text-gray-400 leading-relaxed">{lede}</p>}
     </div>
@@ -57,7 +57,7 @@ export function BandSplit({
   return (
     <div className="grid gap-10 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-16">
       <div>
-        <p className="label-mono mb-4">&mdash;&nbsp;&nbsp;{eyebrow}</p>
+        <p className="label-mono mb-4">{eyebrow}</p>
         {heading && (
           <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight">{heading}</h2>
         )}
