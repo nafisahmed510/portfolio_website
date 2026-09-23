@@ -81,7 +81,9 @@ export function AboutPage() {
                   world of opportunities while staying close to my roots. When I&apos;m not
                   coding or studying you&apos;ll find me on the soccer field with my
                   intramural team, where I&apos;ve made some of my closest friends and
-                  learned that teamwork crosses cultural boundaries.
+                  learned that teamwork crosses cultural boundaries. It is also where I
+                  met my fianc&eacute;e. We played on the same side, started out as
+                  friends, and have been together ever since.
                 </p>
               </div>
             </div>
