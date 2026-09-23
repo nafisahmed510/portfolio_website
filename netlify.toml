@@ -1,0 +1,16 @@
+# Build settings live here rather than only in the Netlify dashboard, so they
+# are versioned with the code and survive a site being relinked or recreated.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Match the local toolchain. Vite 5 needs Node 18+.
+  NODE_VERSION = "22"
+
+# The SPA rewrite also lives in public/_redirects, which Vite copies into dist.
+# Keeping it here too means a deploy is correct even if that file is moved.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
