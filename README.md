@@ -1,9 +1,9 @@
-# nofishy.space
+# nafisahmed.space
 
 Personal site for Nafis Ahmed — CS and Risk Management student at St. John's University,
 working at the seam between software engineering and data.
 
-Live at **[nofishy.space](https://www.nofishy.space)**.
+Live at **[nafisahmed.space](https://www.nafisahmed.space)**.
 
 ## Stack
 
@@ -58,7 +58,7 @@ npm run lint
 
 ## Author
 
-Nafis Ahmed — [nofishy.space](https://www.nofishy.space) ·
+Nafis Ahmed — [nafisahmed.space](https://www.nafisahmed.space) ·
 [github.com/nafisahmed510](https://github.com/nafisahmed510) ·
 [linkedin.com/in/nafisahmed510](https://linkedin.com/in/nafisahmed510)
 
